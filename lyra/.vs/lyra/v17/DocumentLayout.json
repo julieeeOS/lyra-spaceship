@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED55FA48-909A-4F83-90CF-B36CC8E68459}|lyra\\lyra.vcxproj|C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED55FA48-909A-4F83-90CF-B36CC8E68459}|lyra\\lyra.vcxproj|solutionrelative:lyra\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\main.cpp",
+              "RelativeDocumentMoniker": "lyra\\main.cpp",
+              "ToolTip": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\main.cpp",
+              "RelativeToolTip": "lyra\\main.cpp",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAABYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-07T18:06:30.007Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
