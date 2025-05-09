@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\julie\source\repos\lyra-spaceship\SDL2-2.32.6\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\julie\source\repos\lyra-spaceship\SDL2-2.32.6\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\vclib\SDL2-2.32.6\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\vclib\SDL2-2.32.6\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
