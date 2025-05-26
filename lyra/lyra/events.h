@@ -3,7 +3,6 @@
 #include <string>
 #include <cstdlib>
 #include <vector>
-#include "events.h"
 #include "ShipData.h"
 /*klasa obiektów event - zdarzenie*/
 class Event {

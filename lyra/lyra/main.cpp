@@ -5,6 +5,8 @@
 #include "events.h"
 #include "ShipData.h"
 
+
+
 int main() {
 	/*ship status declaration*/
 	ShipData Ship;
@@ -18,9 +20,11 @@ int main() {
 	std::vector<Event*> AllEvents;
 	class Event1 : public Event {
 	public:
-		int Weight = 3;
-		std::string EventName = "one";
-		std::string EventText = "Gather materials or data";
+		Event1() {
+			Weight = 3;
+			EventName = "one";
+			EventText = "Gather materials or data";
+		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
 			if (YesNo) {
 				Ship.materials += 10;
@@ -31,15 +35,14 @@ int main() {
 		}
 	} one;
 	AllEvents.push_back(&one);
-	/*
-	Event1 one;
-	one.Weight = 3;
-	one.EventName = "one";
-	one.EventText = "Gather materials or data";
-	AllEvents.push_back(&one);
-	*/
+	
 	class Event2 : public Event {
 	public:
+		Event2() {
+			Weight = 2;
+			EventName = "two";
+			EventText = "Extract energy or exotic matter";
+		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
 			if (YesNo) {
 				Ship.energy += 10;
@@ -48,15 +51,16 @@ int main() {
 				Ship.exotic_matter += 10;
 			}
 		}
-	};
-	Event2 two;
-	two.Weight = 2;
-	two.EventName = "two";
-	two.EventText = "Extract energy or exotic matter";
+	} two;
 	AllEvents.push_back(&two);
 
 	class Event3 : public Event {
 	public:
+		Event3() {
+			Weight = 2;
+			EventName = "three";
+			EventText = "Fix ship?";
+		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
 			if (YesNo) {
 				Ship.materials -= 15;
@@ -68,15 +72,17 @@ int main() {
 				Ship.energy -= 10;
 			}
 		}
-	};
-	Event3 three;
-	three.Weight = 2;
-	three.EventName = "three";
-	three.EventText = "Fix ship?";
+	} three;
+	
 	AllEvents.push_back(&three);
 
 	class Event4 : public Event {
 	public:
+		Event4() {
+			Weight = 1;
+			EventName = "four";
+			EventText = "Perform a jump?";
+		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
 			if (YesNo) {
 				Ship.exotic_matter -= 5;
@@ -86,15 +92,16 @@ int main() {
 				Ship.data -= 5;
 			}
 		}
-	};
-	Event4 four;
-	four.Weight = 1;
-	four.EventName = "four";
-	four.EventText = "Perform a jump?";
+	} four;
 	AllEvents.push_back(&four);
 
 	class Event5 : public Event {
 	public:
+		Event5() {
+			Weight = 3;
+			EventName = "kills u";
+			EventText = "Die?";
+		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
 			if (YesNo) {
 				Ship.health -= 100;
@@ -103,26 +110,22 @@ int main() {
 				Ship.health += 1;
 			}
 		}
-	};
-	Event5 kill;
-	kill.Weight = 3;
-	kill.EventName = "kills u";
-	kill.EventText = "Die?";
+	} kill;
 	AllEvents.push_back(&kill);
 	
 
 	while (Ship.health > 0 && Ship.energy > 0) {
-		std::cout << "Health: " << Ship.health << "\n";
-		std::cout << "Energy: " << Ship.energy << "\n";
-		std::cout << "Materials: " << Ship.materials << "\n";
-		std::cout << "Data: " << Ship.data << "\n";
-		std::cout << "Exotic Matter: " << Ship.exotic_matter << "\n";
 		if (Ship.health > 100) {
 			Ship.health = 100;
 		}
 		if (Ship.energy > 200) {
 			Ship.energy = 200;
 		}
+		std::cout << "Health: " << Ship.health << "\n";
+		std::cout << "Energy: " << Ship.energy << "\n";
+		std::cout << "Materials: " << Ship.materials << "\n";
+		std::cout << "Data: " << Ship.data << "\n";
+		std::cout << "Exotic Matter: " << Ship.exotic_matter << "\n";
 		EventRandomizer(AllEvents, Ship);
 	}
 	std::cout << "You lose! End status: " << "\n";
@@ -133,13 +136,11 @@ int main() {
 	std::cout << "Exotic Matter: " << Ship.exotic_matter << "\n";
 	
 
-	
-
 	//CallEvent(*AllEvents[0], Ship);
 	//Event* Ptr[4];
 	//Ptr[0] = &one;
 	//Ptr[0]->EventEffect(Ship, true);
 	//AllEvents[0]->EventEffect(Ship, true);
-
+	//std::cout << Ship.materials;
 	return 0;
 }

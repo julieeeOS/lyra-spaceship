@@ -24,6 +24,7 @@ void CallEvent(Event& CalledEvent, ShipData& Ship) {
 
 void EventRandomizer(std::vector<Event*>& EventVector, ShipData& Ship) {
 	srand(time(0)); //maybe to replace with that other random thing
+
 	int WeightSum = 0;
 	for (int i = 0; i < EventVector.size(); i++) {
 		WeightSum += EventVector[i]->Weight;
