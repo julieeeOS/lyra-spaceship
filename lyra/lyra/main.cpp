@@ -113,6 +113,57 @@ int main() {
 	} kill;
 	AllEvents.push_back(&kill);
 	
+	class Unlockable1 : public Event {
+	public:
+		Unlockable1() {
+			Weight = 5;
+			EventName = "unlocking test";
+			EventText = "Gather data?";
+		}
+		void EventEffect(ShipData& Ship, bool YesNo) override {
+			if (YesNo) {
+				Ship.data += 30;
+			}
+			else {
+				Ship.exotic_matter -= 10;
+			}
+		}
+		bool EventCondition(std::vector<Event*> EventVector, ShipData Ship) override {
+			if (Ship.materials >= 60) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	} Unlock1;
+	AllEvents.push_back(&Unlock1);
+
+	class Unlockable2 : public Event {
+	public:
+		Unlockable2() {
+			Weight = 5;
+			EventName = "unlocking test 2";
+			EventText = "Recharge?";
+		}
+		void EventEffect(ShipData& Ship, bool YesNo) override {
+			if (YesNo) {
+				Ship.energy += 30;
+			}
+			else {
+				Ship.health -= 10;
+			}
+		}
+		bool EventCondition(std::vector<Event*> EventVector, ShipData Ship) override {
+			for (int i = 0; i < EventVector.size(); i++) {
+				if (EventVector[i]->EventName == "one") {
+					return true;
+				}
+			}
+			return false;
+		}
+	} Unlock2;
+	AllEvents.push_back(&Unlock2);
 
 	while (Ship.health > 0 && Ship.energy > 0) {
 		if (Ship.health > 100) {
