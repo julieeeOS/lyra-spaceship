@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <cstdlib>
 #include <vector>
@@ -33,11 +33,11 @@ void EventRandomizer(std::vector<Event*>& EventVector, ShipData& Ship) {
 	int random = rand() % WeightSum;
 	for (int i = 0; i < EventVector.size(); i++) {
 		if (random < EventVector[i]->Weight) {
-			if (EventVector[i]->EventCondition(EventVector, Ship)) {
+			//if (EventVector[i]->EventCondition(EventVector, Ship)) {
 				CallEvent(*EventVector[i], Ship);
 				break;
-			}
-			else i--;
+			//}
+			//else i--;
 		}
 		random -= EventVector[i]->Weight;
 	}

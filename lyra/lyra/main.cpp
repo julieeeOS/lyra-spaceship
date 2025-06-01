@@ -137,7 +137,7 @@ int main() {
 			}
 		}
 	} Unlock1;
-	AllEvents.push_back(&Unlock1);
+	//AllEvents.push_back(&Unlock1);
 
 	class Unlockable2 : public Event {
 	public:
@@ -163,10 +163,10 @@ int main() {
 			return false;
 		}
 	} Unlock2;
-	AllEvents.push_back(&Unlock2);
+	//AllEvents.push_back(&Unlock2);
 
 	while (Ship.health > 0 && Ship.energy > 0) {
-		if (Ship.health > 100) {
+		if (Ship.health > 100) { // replace with the <algorithm> thing
 			Ship.health = 100;
 		}
 		if (Ship.energy > 200) {
