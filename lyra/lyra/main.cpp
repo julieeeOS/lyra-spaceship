@@ -18,6 +18,7 @@ int main() {
 
 	/*Declaration of event vector and events*/
 	std::vector<Event*> AllEvents;
+	std::vector<Event*> PreviousEvents;
 	class Event1 : public Event {
 	public:
 		Event1() {
@@ -129,15 +130,10 @@ int main() {
 			}
 		}
 		bool EventCondition(std::vector<Event*> EventVector, ShipData Ship) override {
-			if (Ship.materials >= 60) {
-				return true;
-			}
-			else {
-				return false;
-			}
+			return Ship.materials >= 60;
 		}
 	} Unlock1;
-	//AllEvents.push_back(&Unlock1);
+	AllEvents.push_back(&Unlock1);
 
 	class Unlockable2 : public Event {
 	public:
@@ -163,7 +159,7 @@ int main() {
 			return false;
 		}
 	} Unlock2;
-	//AllEvents.push_back(&Unlock2);
+	AllEvents.push_back(&Unlock2);
 
 	while (Ship.health > 0 && Ship.energy > 0) {
 		if (Ship.health > 100) { // replace with the <algorithm> thing
@@ -177,7 +173,7 @@ int main() {
 		std::cout << "Materials: " << Ship.materials << "\n";
 		std::cout << "Data: " << Ship.data << "\n";
 		std::cout << "Exotic Matter: " << Ship.exotic_matter << "\n";
-		EventRandomizer(AllEvents, Ship);
+		EventRandomizer(AllEvents, PreviousEvents, Ship);
 	}
 	std::cout << "You lose! End status: " << "\n";
 	std::cout << "Health: " << Ship.health << "\n";

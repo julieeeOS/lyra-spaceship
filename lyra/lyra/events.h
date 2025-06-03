@@ -19,6 +19,6 @@ public:
 };
 
 void CallEvent(Event& CalledEvent, ShipData& Ship);
-void EventRandomizer(std::vector<Event*>& EventVector, ShipData& Ship);
+void EventRandomizer(std::vector<Event*> EventVector, std::vector<Event*>& Previous, ShipData& Ship);
 
 

@@ -22,22 +22,30 @@ void CallEvent(Event& CalledEvent, ShipData& Ship) {
 };
 
 
-void EventRandomizer(std::vector<Event*>& EventVector, ShipData& Ship) {
+void EventRandomizer(std::vector<Event*> EventVector, std::vector<Event*>& Previous, ShipData& Ship) {
+
+	for (int i = 0; i < EventVector.size(); i++) {
+		//std::cout << EventVector[i]->EventCondition(Previous, Ship) << std::endl;
+		if (!EventVector[i]->EventCondition(Previous, Ship)) {
+			EventVector.erase(EventVector.begin() + i);
+			i--;
+		}
+	}
+
 	srand(time(0)); //maybe to replace with that other random thing
 
 	int WeightSum = 0;
 	for (int i = 0; i < EventVector.size(); i++) {
 		WeightSum += EventVector[i]->Weight;
 	}
+	//std::cout << WeightSum << std::endl;
 
 	int random = rand() % WeightSum;
 	for (int i = 0; i < EventVector.size(); i++) {
 		if (random < EventVector[i]->Weight) {
-			//if (EventVector[i]->EventCondition(EventVector, Ship)) {
-				CallEvent(*EventVector[i], Ship);
-				break;
-			//}
-			//else i--;
+			Previous.push_back(EventVector[i]);
+			CallEvent(*EventVector[i], Ship);
+			break;
 		}
 		random -= EventVector[i]->Weight;
 	}
