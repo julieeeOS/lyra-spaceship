@@ -1,8 +1,7 @@
 # lyra-spaceship
 
 ## Installation guide
-1. Visual Studio required
-2. Pull all files from GitHub
-3. Follow this tutorial for installation https://lazyfoo.net/tutorials/SDL/01_hello_SDL/windows/msvc2019/index.php (**Important! install it in C:\vclib because I haven't managed to set the libraries up properly and that's the way they're included in the project, otherwise you have to change them manually every time you pull**) (also they're not even used rn just break the project with errors if you don't have them installed on your computer)
-4. Open lyra.sln
-5. Compile and run
+1. Install Visual Studio 2022.
+2. Download all files from the repository.
+3. Run lyra.sln in \lyra-spaceship\lyra.
+4. Compile and run.
