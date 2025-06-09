@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
-#include <cstdlib>
 #include <vector>
 #include "ShipData.h"
 /*klasa obiektów event - zdarzenie*/

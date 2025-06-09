@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <string>
-#include <cstdlib>
 #include <vector>
 #include "events.h"
 #include "ShipData.h"
@@ -30,9 +29,11 @@ int main() {
 			Weight = 3;
 			if (YesNo) {
 				Ship.materials += 10;
+				std::cout << "materials: +10\n";
 			}
 			else {
 				Ship.data += 10;
+				std::cout << "data: +10\n";
 			}
 		}
 	} one;
@@ -49,9 +50,11 @@ int main() {
 			Weight = 2;
 			if (YesNo) {
 				Ship.energy += 10;
+				std::cout << "energy: +10\n";
 			}
 			else {
 				Ship.exotic_matter += 10;
+				std::cout << "exotic matter: +10\n";
 			}
 		}
 	} two;
@@ -70,10 +73,12 @@ int main() {
 				Ship.materials -= 15;
 				Ship.energy += 5;
 				Ship.health += 5;
+				std::cout << "materials: -15\nenergy: +5\nhealth: +5\n";
 			}
 			else {
 				Ship.health -= 10;
 				Ship.energy -= 10;
+				std::cout << "health: -10\nenergy: -10\n";
 			}
 		}
 	} three;
@@ -92,9 +97,11 @@ int main() {
 			if (YesNo) {
 				Ship.exotic_matter -= 5;
 				Ship.data += 10;
+				std::cout << "exotic matter: +5\n data: +10\n";
 			}
 			else {
 				Ship.data -= 5;
+				std::cout << "Data: -5\n";
 			}
 		}
 	} four;
@@ -130,9 +137,11 @@ int main() {
 			Weight = 5;
 			if (YesNo) {
 				Ship.data += 30;
+				std::cout << "Data: +30\n";
 			}
 			else {
 				Ship.exotic_matter -= 10;
+				std::cout << "exotic matter: -10\n";
 			}
 		}
 		bool EventCondition(std::vector<Event*> EventVector, ShipData Ship) override {
@@ -152,9 +161,11 @@ int main() {
 			Weight = 5;
 			if (YesNo) {
 				Ship.energy += 30;
+				std::cout << "energy: +30\n";
 			}
 			else {
 				Ship.health -= 10;
+				std::cout << "health: -10\n";
 			}
 		}
 		bool EventCondition(std::vector<Event*> EventVector, ShipData Ship) override {

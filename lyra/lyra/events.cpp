@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <string>
-#include <cstdlib>
+#include <random>
 #include <vector>
 #include "events.h"
 #include "ShipData.h"
@@ -32,15 +32,19 @@ void EventRandomizer(std::vector<Event*> EventVector, std::vector<Event*>& Previ
 		}
 	}
 
-	srand(time(0)); //maybe to replace with that other random thing
+
 
 	int WeightSum = 0;
 	for (int i = 0; i < EventVector.size(); i++) {
 		WeightSum += EventVector[i]->Weight;
 	}
-	std::cout << "Suma wag: " << WeightSum << std::endl;
+	// std::cout << "Suma wag: " << WeightSum << std::endl;
 
-	int random = rand() % WeightSum;
+	std::random_device rd; // seed dla generacji liczby pseudolosowej
+	std::mt19937 gen(rd()); // obiekt pozwalajacy na generowanie liczby pseudolosowej 
+	std::uniform_int_distribution<> distrib(0, WeightSum-1); // obiekt ograniczający od 0 do sumy wag-1
+	int random = distrib(gen); // wylosowanie liczby w dystrubucji
+
 	for (int i = 0; i < EventVector.size(); i++) {
 		if (random < EventVector[i]->Weight) {
 			Previous.push_back(EventVector[i]);

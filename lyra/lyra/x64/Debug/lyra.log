@@ -1,5 +1,4 @@
 ﻿  events.cpp
-C:\Users\julia\Documents\GitHub\lyra-spaceship\lyra\lyra\events.cpp(35,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   main.cpp
   Generating Code...
-  lyra.vcxproj -> C:\Users\julia\Documents\GitHub\lyra-spaceship\lyra\x64\Debug\lyra.exe
+  lyra.vcxproj -> C:\Users\julie\source\repos\lyra-spaceship\lyra\x64\Debug\lyra.exe
