@@ -38,7 +38,7 @@ void EventRandomizer(std::vector<Event*> EventVector, std::vector<Event*>& Previ
 	for (int i = 0; i < EventVector.size(); i++) {
 		WeightSum += EventVector[i]->Weight;
 	}
-	//std::cout << WeightSum << std::endl;
+	std::cout << "Suma wag: " << WeightSum << std::endl;
 
 	int random = rand() % WeightSum;
 	for (int i = 0; i < EventVector.size(); i++) {
@@ -48,5 +48,11 @@ void EventRandomizer(std::vector<Event*> EventVector, std::vector<Event*>& Previ
 			break;
 		}
 		random -= EventVector[i]->Weight;
+	}
+};
+
+void WeightIncrement(std::vector<Event*>& EventVector) {
+	for (int i = 0; i < EventVector.size(); i++) {
+		EventVector[i]->Weight++;
 	}
 };

@@ -27,6 +27,7 @@ int main() {
 			EventText = "Gather materials or data";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 3;
 			if (YesNo) {
 				Ship.materials += 10;
 			}
@@ -45,6 +46,7 @@ int main() {
 			EventText = "Extract energy or exotic matter";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 2;
 			if (YesNo) {
 				Ship.energy += 10;
 			}
@@ -63,6 +65,7 @@ int main() {
 			EventText = "Fix ship?";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 2;
 			if (YesNo) {
 				Ship.materials -= 15;
 				Ship.energy += 5;
@@ -85,6 +88,7 @@ int main() {
 			EventText = "Perform a jump?";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 1;
 			if (YesNo) {
 				Ship.exotic_matter -= 5;
 				Ship.data += 10;
@@ -104,6 +108,7 @@ int main() {
 			EventText = "Die?";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 3;
 			if (YesNo) {
 				Ship.health -= 100;
 			}
@@ -122,6 +127,7 @@ int main() {
 			EventText = "Gather data?";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 5;
 			if (YesNo) {
 				Ship.data += 30;
 			}
@@ -143,6 +149,7 @@ int main() {
 			EventText = "Recharge?";
 		}
 		void EventEffect(ShipData& Ship, bool YesNo) override {
+			Weight = 5;
 			if (YesNo) {
 				Ship.energy += 30;
 			}
@@ -174,6 +181,8 @@ int main() {
 		std::cout << "Data: " << Ship.data << "\n";
 		std::cout << "Exotic Matter: " << Ship.exotic_matter << "\n";
 		EventRandomizer(AllEvents, PreviousEvents, Ship);
+		WeightIncrement(AllEvents);
+		std::cout << "\n";
 	}
 	std::cout << "You lose! End status: " << "\n";
 	std::cout << "Health: " << Ship.health << "\n";
