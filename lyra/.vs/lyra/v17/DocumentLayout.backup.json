@@ -38,8 +38,7 @@
               "RelativeToolTip": "lyra\\ShipData.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-09T09:26:39.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T09:26:39.3Z"
             },
             {
               "$type": "Document",
@@ -47,12 +46,11 @@
               "Title": "events.cpp",
               "DocumentMoniker": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\events.cpp",
               "RelativeDocumentMoniker": "lyra\\events.cpp",
-              "ToolTip": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\events.cpp*",
-              "RelativeToolTip": "lyra\\events.cpp*",
+              "ToolTip": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\events.cpp",
+              "RelativeToolTip": "lyra\\events.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-09T06:15:34.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T06:15:34.799Z"
             },
             {
               "$type": "Document",
@@ -64,8 +62,7 @@
               "RelativeToolTip": "lyra\\events.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-07T18:30:05.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T18:30:05.178Z"
             },
             {
               "$type": "Document",
@@ -75,7 +72,7 @@
               "RelativeDocumentMoniker": "lyra\\main.cpp",
               "ToolTip": "C:\\Users\\julie\\source\\repos\\lyra-spaceship\\lyra\\lyra\\main.cpp",
               "RelativeToolTip": "lyra\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-07T18:06:30.007Z",
               "EditorCaption": ""

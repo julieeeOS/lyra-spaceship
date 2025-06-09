@@ -4,8 +4,6 @@
 #include "events.h"
 #include "ShipData.h"
 
-
-
 int main() {
 	/*ship status declaration*/
 	ShipData Ship;
@@ -202,12 +200,5 @@ int main() {
 	std::cout << "Data: " << Ship.data << "\n";
 	std::cout << "Exotic Matter: " << Ship.exotic_matter << "\n";
 	
-
-	//CallEvent(*AllEvents[0], Ship);
-	//Event* Ptr[4];
-	//Ptr[0] = &one;
-	//Ptr[0]->EventEffect(Ship, true);
-	//AllEvents[0]->EventEffect(Ship, true);
-	//std::cout << Ship.materials;
 	return 0;
 }

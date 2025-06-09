@@ -32,8 +32,6 @@ void EventRandomizer(std::vector<Event*> EventVector, std::vector<Event*>& Previ
 		}
 	}
 
-
-
 	int WeightSum = 0;
 	for (int i = 0; i < EventVector.size(); i++) {
 		WeightSum += EventVector[i]->Weight;
