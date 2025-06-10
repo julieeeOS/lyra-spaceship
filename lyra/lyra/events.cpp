@@ -10,14 +10,19 @@ void CallEvent(Event& CalledEvent, ShipData& Ship) {
 	char YN;
 	std::cout << CalledEvent.EventName << "\n";
 	std::cout << CalledEvent.EventText << "\n";
-	std::cout << "y/n: ";
+	std::cout << "Select y = yes, n = no: ";
 	std::cin >> YN;
+	while (YN != 'y' && YN != 'n') {
+		std::cout << "Incorrect input. Select y/n: ";
+		std::cin >> YN;
+	}
 	if (YN == 'y') {
 		YesNo = true;
 	}
 	else if (YN == 'n') {
 		YesNo = false;
 	}
+	std::cout << std::endl;
 	CalledEvent.EventEffect(Ship, YesNo);
 };
 
